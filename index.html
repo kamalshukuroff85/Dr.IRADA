@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. İrada 💐</title>
+  <style>
+    body {
+      background-color: #fffaf0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ff7f50;
+    }
+    #question {
+      font-size: 1.3em;
+      margin: 30px 0;
+    }
+    .button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #yesBtn {
+      background-color: #ffa500;
+      color: white;
+    }
+    #noBtn {
+      background-color: #ccc;
+      color: black;
+      position: relative;
+    }
+    #noBtn:hover {
+      transform: translateX(calc(60px - 120px * Math.random()));
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #444;
+    }
+    .box {
+      margin-top: 40px;
+      border: 2px dashed #ffa500;
+      padding: 20px;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+    }
+    .heart {
+      color: orange;
+      font-size: 1.5em;
+      display: none;
+    }
+    #daysCount {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dr. İrada 👩🏼‍⚕️🧡</h1>
+  <div id="question">Beni affedermisin?</div>
+  <button class="button" id="yesBtn" onclick="yesClicked()">Evet 🧡</button>
+  <button class="button" id="noBtn" onclick="noClicked()">Hayır 😕</button>  <div id="result"></div>  <div class="box" onclick="showHearts()">
+    Kutuyu Aç 🎁
+    <div id="insideText" style="margin-top:10px;font-weight:bold;">(Dr. İrada yazısı var)</div>
+    <div class="heart" id="hearts">🧡🧡🧡🧡🧡</div>
+  </div>  <div id="daysCount"></div>  <script>
+    function yesClicked() {
+      document.getElementById('result').innerHTML = "Çooook teşekkür ederim, iyi ki varsın 🧡👩🏼‍⚕️💐";
+    }
+
+    function noClicked() {
+      document.getElementById('result').innerHTML = "Kabul edilmedi 😂 Lütfen evete tıkla";
+    }
+
+    function showHearts() {
+      document.getElementById('hearts').style.display = 'block';
+      document.getElementById('insideText').innerText = 'Dr. İrada';
+    }
+
+    function calculateDays() {
+      const startDate = new Date("2024-08-31");
+      const today = new Date();
+      const diff = today - startDate;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("daysCount").innerText = `Tanışalı ${days} gün oldu 🧡`;
+    }
+    calculateDays();
+  </script></body>
+  </html>
